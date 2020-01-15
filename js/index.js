@@ -38,7 +38,36 @@ window.addEventListener('resize', () => {
     resize[0].style.width = '50%';
 })
 
-const destination = document.querySelectorAll('.destination');
+const contentPick = document.querySelector('.content-pick');
 window.addEventListener('scroll', () => {
-    destination.style.backgroundColor = 'gold';
-})
+    contentPick.style.backgroundColor = 'gold';
+});
+
+const destination = document.querySelectorAll('.destination');
+window.addEventListener('scroll', (event) => {
+    destination[2].style.color = 'blue';
+    event.stopPropagation();
+});
+
+const Adventure = document.querySelectorAll('h2');
+Adventure[2].addEventListener('mouseup', () => {
+    Adventure[2].textContent = 'For You!!';
+});
+Adventure[2].addEventListener('mouseleave', () => {
+    Adventure[2].textContent = 'Adventure Awaits';
+});
+
+const bgColor = document.querySelectorAll('.text-content');
+bgColor[1].addEventListener('mousemove', () => {
+    bgColor[1].style.backgroundColor = 'gray';
+    bgColor[1].style.color = 'yellow';
+});
+bgColor[1].addEventListener('mouseleave', () => {
+    bgColor[1].style.backgroundColor = 'white';
+    bgColor[1].style.color = 'black';
+});
+
+const nav = document.querySelector('.nav');
+    nav.addEventListener('click', (event) => {
+        event.preventDefault();
+    });
